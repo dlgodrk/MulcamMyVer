@@ -17,12 +17,6 @@
 	   	<br>
 	   	<br>
 	    <table class="table">
-	    	<tr>
-		        <th width="200px"><strong>책 등록번호</strong></th>
-		        <td>${book.bookKey}</td>
-		        <th width="100px"><strong>조회수</strong></th>
-		        <td>${book.viewcount}</td>
-	       	</tr>
 	        <tr>
 	            <th><strong>제목</strong></th>
 	            <td>${book.title}</td>
@@ -33,7 +27,7 @@
 	            <th><strong>출판사</strong></th>
 	            <td>${book.publisher}</td>
 	            <th><strong>출판년도</strong></th>
-	            <td>${book.pubYear}</td>
+	            <td>${book.pubyear}</td>
 	       	</tr>                	
 	   	</table>
 	
@@ -41,8 +35,7 @@
 		<p align = "right">
 		<c:if test= "${check==1}">
 			<form name="backform" method="post" action="${pageContext.request.contextPath}/booklist.do">
-			    <button type="submit" class="btn btn-primary"><strong>목록</strong></button>               
-		       	<input type="hidden" id="library" name="library" value="${library}">
+			    <button type="submit" class="btn btn-primary"><strong>목록</strong></button>        
 		       	<input type="hidden" id="option" name="option" value="${option}">
 		       	<input type="hidden" id="target" name="target" value="${target}">
 	       	</form>

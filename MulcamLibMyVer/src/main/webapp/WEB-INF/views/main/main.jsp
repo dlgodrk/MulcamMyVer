@@ -22,7 +22,7 @@
             <div class="col-md-10 col-lg-10 cl-xl-9 mx-auto">
             	<form name="searchform" method="post" action="${pageContext.request.contextPath}/booklist.do">
 	                <div class="form-row">
-                  		<div class="col-md-20 col-md-3">
+                  		<!-- <div class="col-md-20 col-md-3">
                       		<select id="library" name="library"  class="form-control form-control-lg" aria-controls="dataTable">
 		                  		<option value="강남도서관">강남도서관</option>
 								<option value="강동도서관">강동도서관</option>
@@ -47,7 +47,7 @@
 								<option value="정독도서관">정독도서관</option>
 								<option value="종로도서관">종로도서관</option>
 	                   		</select>
-	                	</div>
+	                	</div> 	-->
                      	<div class="col-md-20 col-md-2">
                        		<select  id="option" name="option" class="form-control form-control-lg" aria-controls="dataTable" >
                            		<option value="title">도서제목</option>

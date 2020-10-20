@@ -150,6 +150,14 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.json/json -->
+		<!-- json관련 library -->
+		<dependency>
+		    <groupId>org.json</groupId>
+		    <artifactId>json</artifactId>
+		    <version>20200518</version>
+		</dependency>
 	
 		<!-- Test -->
 		<dependency>

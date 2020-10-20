@@ -3,8 +3,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import javax.net.ssl.HttpsURLConnection;
-
 import org.w3c.dom.Node;
 
 public class test {

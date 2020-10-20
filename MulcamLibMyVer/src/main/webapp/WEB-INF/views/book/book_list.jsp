@@ -12,7 +12,7 @@
      	<div class="col-md-10 col-lg-10 cl-xl-9 mx-auto">
             	<form name="searchform" method="post" action="${pageContext.request.contextPath}/booklist.do">
 	                <div class="form-row">
-                  		<div class="col-md-20 col-md-3">
+                  		<!--  <div class="col-md-20 col-md-3">
                       		<select  id="library" name="library"  class="form-control form-control-lg" aria-controls="dataTable">
 		                  		<option value="강남도서관">강남도서관</option>
 								<option value="강동도서관">강동도서관</option>
@@ -37,7 +37,7 @@
 								<option value="정독도서관">정독도서관</option>
 								<option value="종로도서관">종로도서관</option>
 	                   		</select>
-	                	</div>
+	                	</div>-->
                      	<div class="col-md-20 col-md-2">
                        		<select  id="option" name="option" class="form-control form-control-lg" aria-controls="dataTable" >
                            		<option value="title">도서제목</option>
@@ -75,20 +75,29 @@
 	                                        <th style="width:120px"><strong>출판사</strong></th>
 	                                        <th style="width:70px"><strong>출판년도</strong></th>
 	                                        <th style="width:70px"><strong>위치</strong></th>
-	                                        <th style="width:70px"><strong>조회수</strong></th>
 	                                    </tr>
 	                                </thead>
                                     <tbody>
                                     <c:if test="${!empty booklist}">
                                     <c:forEach var="book" items="${booklist}" varStatus="status">
                                     	<tr>
-                                        	<td>${status.count}</td>
-                                            <td><a href="book.do?bookKey=${book.bookKey}&check=1">${book.title}</a></td>
+                                        	<td>${status.count}
+                                        	<form method ="post" action = "${pageContext.request.contextPath}/book.do">
+                                        		<input type = "hidden" id="check" name ="check" value="1">
+                                        		<input type = "hidden" id="title" name ="title" value="${book.title}">
+                                        		<input type = "hidden" id="author" name ="author" value="${book.author}">
+                                        		<input type = "hidden" id="publisher" name ="publisher" value="${book.publisher}">
+                                        		<input type = "hidden" id="pubyear" name ="pubyear" value="${book.pubyear}">
+                                        		<input type = "hidden" id="place" name ="place" value="${book.place}">
+                                        		<input type = "submit" value="상세보기"></input>
+                                        	</form>
+                                        	</td>
+                                            <!--  <td><a href="book.do?bookKey=${book}&check=1">${book.title}</a></td>-->
+                                            <td>${book.title }</td>
                                             <td>${book.author}</td>
                                             <td>${book.publisher}</td>
-                                            <td>${book.pubYear}</td>
-                                            <td>${book.libName}</td>
-                                            <td>${book.viewcount}</td>
+                                            <td>${book.pubyear}</td>
+                                            <td>${book.place}</td>
                                         </tr>
                                      </c:forEach>
                                      </c:if>
