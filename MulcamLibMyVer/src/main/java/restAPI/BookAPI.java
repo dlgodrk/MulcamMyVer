@@ -8,6 +8,7 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class BookAPI {
@@ -42,11 +43,18 @@ public class BookAPI {
         rd.close();
         conn.disconnect();
         responseJSON = new JSONObject(sb.toString());
-        JSONArray resultArray = responseJSON.getJSONArray("result");
+        JSONArray resultArray;
+        try {
+        	resultArray = responseJSON.getJSONArray("result");
+        }catch(JSONException e) {
+        	resultArray = null;
+        }
         ArrayList<Book> bookList = new ArrayList();
-        for(int i = 0 ; i < resultArray.length(); i++) {
-        	JSONObject jo = (JSONObject)resultArray.get(i);
-        	bookList.add(JSONToBook(jo));
+        if(resultArray!=null) {
+	        for(int i = 0 ; i < resultArray.length(); i++) {
+	        	JSONObject jo = (JSONObject)resultArray.get(i);
+	        	bookList.add(JSONToBook(jo));
+	        }
         }
         return bookList;
 	}

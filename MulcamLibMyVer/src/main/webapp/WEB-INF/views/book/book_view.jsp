@@ -28,6 +28,8 @@
 	            <td>${book.publisher}</td>
 	            <th><strong>출판년도</strong></th>
 	            <td>${book.pubyear}</td>
+	            <th><strong>위치</strong>
+	            <td>${book.place }</td>
 	       	</tr>                	
 	   	</table>
 	

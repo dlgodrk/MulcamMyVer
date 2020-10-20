@@ -89,7 +89,7 @@
                                         		<input type = "hidden" id="publisher" name ="publisher" value="${book.publisher}">
                                         		<input type = "hidden" id="pubyear" name ="pubyear" value="${book.pubyear}">
                                         		<input type = "hidden" id="place" name ="place" value="${book.place}">
-                                        		<input type = "submit" value="상세보기"></input>
+                                        		<input type = "submit" value="상세보기" class="btn btn-primary"></input>
                                         	</form>
                                         	</td>
                                             <!--  <td><a href="book.do?bookKey=${book}&check=1">${book.title}</a></td>-->

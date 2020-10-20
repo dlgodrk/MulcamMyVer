@@ -30,9 +30,6 @@ public class BookController {
 		session.setAttribute("target",keyword);
 		System.out.println(target+" "+keyword);
 		ArrayList<Book> bookList = BookAPI.searchBook(target,keyword);
-		for(Book book : bookList) {
-			System.out.println(book);
-		}
 		request.setAttribute("booklist", bookList);
 		return "/book/book_list";
 	}
